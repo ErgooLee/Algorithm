@@ -1,0 +1,53 @@
+广度优先搜索框架：
+        Queue<Node> queue = new LinkedList<>();//1.第一个节点放入队列
+        queue.offer(new Node(0, 0));
+        visited[0][0] = 1;
+        Node top;
+        while (!queue.isEmpty()) {//2.当队列不为空时
+            top = queue.poll();
+            for (int i = 0; i < 4; i++) {//3.将与之关联的节点试探性放入队列
+                Node next = new Node(top.x + xx[i], top.y + yy[i]);
+                if (check(next.x, next.y)) {
+                    result[next.x][next.y] = i;
+                    visited[next.x][next.y] = 1;
+                    queue.offer(next);
+                }
+                if (next.x == 7 && next.y == 7) {//4.
+                    System.out.println("done");
+                    out();
+                    return;
+                }
+            }
+        }
+深度优先搜索框架：
+        for (int i = 0; i < 4; i++) {
+            int nextX = x + xx[i];
+            int nextY = y + yy[i];
+            if (check(nextX,nextY)){
+                visited[x][y] = 1;
+                result[nextX][nextY] = i;
+                if (nextX == 7 && nextY == 7) {
+                    out();
+                    return;
+                }else{
+                    dfs(nextX,nextY);
+                }
+            }
+        }
+递归回溯框架：
+        while (k >= 0) {
+            result[k] = result[k] + 1;
+            while (result[k] < 8 && !check(k, result[k])) {
+                result[k] = result[k] + 1;
+            }
+            if (result[k] < 8) {
+                    if (k == 7) {
+                        out();
+                    }else{
+                        k = k + 1;
+                        result[k] = -1;
+                    }
+            }else{
+                k = k - 1;
+            }
+        }
