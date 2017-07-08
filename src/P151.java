@@ -1,6 +1,6 @@
 /**
  * Created by lichao on 03/07/2017.
- * 求第n小的数
+ * 求第2小的数
  */
 public class P151 implements IAlgorithm{
     int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14};

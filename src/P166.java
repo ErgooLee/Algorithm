@@ -1,5 +1,6 @@
 /**
  * Created by lichao on 04/07/2017.
+ * 动态规划  值最大路径
  */
 public class P166 implements IAlgorithm {
     @Override

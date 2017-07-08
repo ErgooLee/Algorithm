@@ -7,8 +7,8 @@ public class P212 implements IAlgorithm{
     private int total = 0;
     @Override
     public void exe() {
-//        nonRecursive();
-        recursive(0);
+        nonRecursive();
+//        recursive(0);
     }
     private void recursive(int k){
         if (k == 8) {
@@ -37,9 +37,9 @@ public class P212 implements IAlgorithm{
                         out();
                     }else{
                         k = k + 1;
-                        result[k] = -1;
                     }
             }else{
+                result[k] = -1;
                 k = k - 1;
             }
         }

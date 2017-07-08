@@ -1,5 +1,6 @@
 /**
  * Created by lichao on 04/07/2017.
+ * 两个字符串的最长子序列
  */
 public class P180 implements IAlgorithm {
     private String a = "abcbdab";

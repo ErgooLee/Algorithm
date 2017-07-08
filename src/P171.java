@@ -1,6 +1,6 @@
 /**
  * Created by lichao on 04/07/2017.
- * 资源分配问题
+ * 资源分配问题  动态规划
  */
 public class P171 implements IAlgorithm {
     @Override
