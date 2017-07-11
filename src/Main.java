@@ -33,7 +33,9 @@ public class Main {
 //        IAlgorithm algorithm = new P225();
 //        IAlgorithm algorithm = new P228();
 //        IAlgorithm algorithm = new P235();
-        IAlgorithm algorithm = new P237();
+//        IAlgorithm algorithm = new P237();
+//        IAlgorithm algorithm = new P251();
+        IAlgorithm algorithm = new P265();
         algorithm.exe();
     }
 }

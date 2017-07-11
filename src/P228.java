@@ -10,27 +10,27 @@ public class P228 implements IAlgorithm {
 
     @Override
     public void exe() {
-        List<Tuble> data = new ArrayList();
-        data.add(new Tuble(0, 5, 6));
-        data.add(new Tuble(1, 12, 2));
-        data.add(new Tuble(2, 4, 14));
-        data.add(new Tuble(3, 8, 7));
+        List<Tuple> data = new ArrayList();
+        data.add(new Tuple(0, 5, 6));
+        data.add(new Tuple(1, 12, 2));
+        data.add(new Tuple(2, 4, 14));
+        data.add(new Tuple(3, 8, 7));
 
-        TreeSet<Tuble> a = new TreeSet<>((t1,t2)->{
+        TreeSet<Tuple> a = new TreeSet<>((t1, t2)->{
             if (t1.a >= t2.a) {
                 return 1;
             }else
                 return -1;
         });
 
-        TreeSet<Tuble> b = new TreeSet<>((t1,t2)->{
+        TreeSet<Tuple> b = new TreeSet<>((t1, t2)->{
             if (t1.b >= t2.b) {
                 return -1;
             }else
                 return 1;
         });
 
-        for (Tuble item:data) {
+        for (Tuple item:data) {
             if (item.a < item.b) {
                 a.add(item);
             }else {
@@ -41,11 +41,11 @@ public class P228 implements IAlgorithm {
         System.out.println(b);
 
     }
-    public class Tuble{
+    public class Tuple {
         public int id;
         public int a;
         public int b;
-        public Tuble(int id,int a,int b){
+        public Tuple(int id, int a, int b){
             this.id = id;
             this.a = a;
             this.b = b;
@@ -58,7 +58,7 @@ public class P228 implements IAlgorithm {
 
         @Override
         public boolean equals(Object obj) {
-            if(((Tuble) obj).id == this.id)
+            if(((Tuple) obj).id == this.id)
                 return true;
             else
                 return false;
