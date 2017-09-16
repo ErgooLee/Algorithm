@@ -11,7 +11,6 @@ public class P180 implements IAlgorithm {
         result = new int[a.length() + 1][b.length() + 1];
         for (int i = 0;i<a.length() + 1;i++) {
             for (int j = 0; j < b.length() + 1; j++) {
-
                 result[i][j] = -1;
             }
 
@@ -19,7 +18,6 @@ public class P180 implements IAlgorithm {
         getMaxSub(a.length(), b.length());
         for (int i = 0;i<a.length() + 1;i++) {
             for (int j = 0; j < b.length() + 1; j++) {
-
                 System.out.printf("%3d", result[i][j]);
             }
             System.out.println();
