@@ -23,6 +23,5 @@ public class P66 implements IAlgorithm {
             }else
                 comb(i - 1, r - 1);//这里是i-1不是n-1
         }
-
     }
 }

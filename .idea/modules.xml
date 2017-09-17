@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algorithm.iml" filepath="$PROJECT_DIR$/algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlgorithmDesign&amp;Analysis.iml" filepath="$PROJECT_DIR$/AlgorithmDesign&amp;Analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/DataStructure/DataStructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwordToOffer/SwordToOffer.iml" filepath="$PROJECT_DIR$/SwordToOffer/SwordToOffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WrittenExam/WrittenExam.iml" filepath="$PROJECT_DIR$/WrittenExam/WrittenExam.iml" />
     </modules>
   </component>
 </project>
