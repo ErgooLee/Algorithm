@@ -21,9 +21,7 @@ public class P206 implements IAlgorithm {
     }
 
     public void dfs(int who) {
-        if (who >= 7) {
-            total = total + 1;
-            System.out.print(total + ":  ");
+        if (who == 7) {
             out();
             return;
         }
@@ -32,7 +30,6 @@ public class P206 implements IAlgorithm {
                 result[who] = i;
                 dfs(who + 1);
             }
-
         }
     }
 
@@ -45,6 +42,7 @@ public class P206 implements IAlgorithm {
         return true;
     }
     private void out(){
+        System.out.print(++total + ":  ");
         for (int i : result) {
             System.out.printf("%-3d", i);
         }

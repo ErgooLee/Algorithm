@@ -3,7 +3,9 @@ import java.util.Queue;
 
 /**
  * Created by lichao on 06/07/2017.
- *最短路径问题  广度优先搜索
+ *最短路径问题(所有路径默认距离为1)  广度优先搜索
+ *
+ * 注意result的巧妙用法
  */
 public class P198 implements IAlgorithm {
     @Override
@@ -11,9 +13,6 @@ public class P198 implements IAlgorithm {
         final int NODE = 8;
         int result[] = new int[NODE];
         int visited[] = new int[NODE];
-        for (int i = 0; i < NODE; i++) {
-            result[i] = -1;
-        }
         Queue<Integer> queue = new LinkedList<>();
         int[][] data = new int[][]{
                 {0,1,1,1,0,1,0,0},
@@ -35,14 +34,13 @@ public class P198 implements IAlgorithm {
                     queue.offer(i);
                     result[i] = top;
                     visited[i] = 1;
-                    if (i == 7) {
-                        System.out.println("done");
+                    if (i == NODE - 1) {
                         int j = 7;
-                        while(j>=0){
-                            System.out.printf("%c", j  + 'A');
+                        while (j > 0) {
+                            System.out.printf("%c", j + 'A');
                             j = result[j];
                         }
-
+                        System.out.println('A');
                     }
                 }
             }

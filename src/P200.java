@@ -2,10 +2,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by lichao on 06/07/2017.
+ * Created by lichao on 06/07/201n.
  * 深度优先和广度优先解决迷宫问题。
+ * 多条路径都要找出来
  */
 public class P200 implements IAlgorithm {
+    int n = 7;
     int[][] data = new int[][]{
             {0,0,0,0,0,0,0,0},
             {0,1,1,1,1,0,1,0},
@@ -20,10 +22,11 @@ public class P200 implements IAlgorithm {
     int[][] result = new int[8][8];
     int[] xx = {1, 0, -1, 0};
     int[] yy = {0, 1, 0, -1};
+    int count = 0;
     @Override
     public void exe() {
-//        bfs();
-        dfs(0   ,0);
+        bfs();
+//        dfs(0   ,0);
 
     }
     public class Node{
@@ -36,20 +39,12 @@ public class P200 implements IAlgorithm {
     }
 
     public boolean check(int x, int y) {
-        if (x >= 0 && x <= 7 && y >= 0 && y <= 7 && visited[x][y] != 1 && data[x][y] != 1) {
-
+        if (x >= 0 && x <= n && y >= 0 && y <= n && visited[x][y] != 1 && data[x][y] != 1) {
             return true;
         }
         return false;
     }
     public void bfs(){
-
-        for (int i = 0;i<8;i++) {
-            for (int j = 0;j<8;j++) {
-                result[i][j] = -1;
-            }
-        }
-
         Queue<Node> queue = new LinkedList<>();
         queue.offer(new Node(0, 0));
         visited[0][0] = 1;
@@ -63,8 +58,7 @@ public class P200 implements IAlgorithm {
                     visited[next.x][next.y] = 1;
                     queue.offer(next);
                 }
-                if (next.x == 7 && next.y == 7) {
-                    System.out.println("done");
+                if (next.x == n && next.y == n) {
                     out();
                     return;
                 }
@@ -76,30 +70,28 @@ public class P200 implements IAlgorithm {
         for (int i = 0; i < 4; i++) {
             int nextX = x + xx[i];
             int nextY = y + yy[i];
-            if (check(nextX,nextY)){
+            if (check(nextX, nextY)) {
                 visited[x][y] = 1;
                 result[nextX][nextY] = i;
-                if (nextX == 7 && nextY == 7) {
+                if (nextX == n && nextY == n) {
                     out();
-                    return;
-                }else{
-                    dfs(nextX,nextY);
                 }
+                dfs(nextX, nextY);
+                visited[x][y] = 0;
             }
         }
-
     }
     public void out(){
-        int preX = 7;
-        int preY = 7;
-        while(true){
-            System.out.println("(" + preX + "," + preY + ")");
-            if (preX == 0 && preY == 0) {
-                return;
-            }
+        count++;
+        System.out.printf("%2d:", count);
+        int preX = n;
+        int preY = n;
+        while (preX != 0 || preY != 0) {
+            System.out.print("(" + preX + "," + preY + ")");
             int pre = result[preX][preY];
             preX = preX - xx[pre];
             preY = preY - yy[pre];
         }
+        System.out.println("(0,0)");
     }
 }

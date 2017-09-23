@@ -3,7 +3,8 @@
  * 八皇后问题 回溯方法
  */
 public class P212 implements IAlgorithm{
-    private int[] result = new int[8];
+    private int maxValue = 8;
+    private int[] result = new int[maxValue];
     private int total = 0;
     @Override
     public void exe() {
@@ -11,11 +12,11 @@ public class P212 implements IAlgorithm{
 //        recursive(0);
     }
     private void recursive(int k){
-        if (k == 8) {
+        if (k == maxValue) {
             out();
             return;
         }
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < maxValue; i++) {
             if(check(k, i)){
                 result[k] = i;
                 recursive(k + 1);
@@ -29,10 +30,10 @@ public class P212 implements IAlgorithm{
         int k = 0;
         while (k >= 0) {
             result[k] = result[k] + 1;
-            while (result[k] < 8 && !check(k, result[k])) {
+            while (result[k] < maxValue && !check(k, result[k])) {
                 result[k] = result[k] + 1;
             }
-            if (result[k] < 8) {
+            if (result[k] < maxValue) {
                     if (k == 7) {
                         out();
                     }else{

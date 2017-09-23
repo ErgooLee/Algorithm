@@ -3,6 +3,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        LCS.main();
+        new P206().exe();
     }
 }
