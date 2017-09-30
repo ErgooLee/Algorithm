@@ -9,7 +9,7 @@ public class P221 implements IAlgorithm {
         int r = 5;
         int k = 0;
         int[] result = new int[r];
-        result[0] = n+1;
+        result[0] = n + 1;
         while (k >= 0) {
             result[k] = result[k] - 1;
             if (result[k] >= r - k) {

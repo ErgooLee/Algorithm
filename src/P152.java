@@ -36,7 +36,6 @@ public class P152 implements IAlgorithm {
             }else{
                 return getK(j + 1, right, k - j + left - 1);
             }
-
         }
     }
 }

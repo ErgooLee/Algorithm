@@ -33,6 +33,7 @@ public class P251 implements IAlgorithm {
                 result[x + temp + i][y + temp + j] = result[i][j];
             }
         }
+
         getK(x + temp, y, k - 1);
         for (int i = 0; i < temp; i++) {
             for (int j = 0; j < temp; j++) {
